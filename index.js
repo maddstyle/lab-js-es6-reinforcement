@@ -65,10 +65,11 @@ const usersArray = [
 
 const userNames = [];
 for (let user of usersArray) {
-  // Your Code Here ...
+  let fullName = `${user.firstName}${user.lastName}`;
+  userNames.push(fullName);
 }
 
-console.log('userNames', userNames);
+console.log(fullName);
 
 
 
@@ -78,11 +79,11 @@ console.log('userNames', userNames);
 // 1. push all first names into a new array `userFirstNames
 const userFirstNames = [];
 for (let user of usersArray) {
-  // Your Code Here ...
+  let firstName = `${user.firstName}`;
+  userFirstNames.push(firstName);
 }
 
 console.log('userFirstNames', userFirstNames);
-
 
 
 //  TASK 3 - for of loop
@@ -91,8 +92,9 @@ console.log('userFirstNames', userFirstNames);
 // 1. push all of the last names into a new array `userLastNames
 const userLastNames = [];
 for (let user of usersArray) {
-     // Your Code Here ...
-}
+     let lastName = `${user.lastName}`
+     userLastNames.push(lastName);
+
 console.log('userLastNames', userLastNames);
 
 
@@ -104,11 +106,32 @@ console.log('userLastNames', userLastNames);
 // 1. destructure `firstName`, `lastName` and `balance` from each user
 // 2. After destructuring create a new object using object literal (only name of variable) consisting of `firstName`, `lastName` and `balance` and 
 // 3. push each new object into a new array `userCreditDetails`
-destructuring
+//destructuring
+// const userCreditDetails = [];
+
+// for (const user of usersArray) {
+//   let {firstName, lastName, balance} = credit;
+//   userCreditDetails.push(credit);
+  
+
+// }
+
 const userCreditDetails = [];
-
-for (const user of usersArray) {
-  // Your Code Here ...
+for(let user of usersArray){
+  const {firstName, lastName, balance} = user;
+  // let newUser = {
+    // firstName,
+    // lastName,
+    // balance
+  //name: firstName,
+  //   lastName: lastName,
+  //   balance: balance
+  // };
+  // const newObj = {
+  //   name: firstName,
+  //   familyName: lastName,
+  //   accountBalance: balance
+  // }
+  userCreditDetails.push({user})
 }
-
-console.log('userCreditDetails', userCreditDetails);
+console.log(userCreditDetails)
